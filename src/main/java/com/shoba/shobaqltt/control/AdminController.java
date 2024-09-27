@@ -121,8 +121,9 @@ public class AdminController {
     }
 
     @PostMapping("/admin/addNewDetail/{id}")
-    public String addNewDetail(Model model, @PathVariable("id") Long id, @RequestParam("title")String title, @RequestParam("content")String content, @RequestParam("status")String status){
-        Optional<category> cateOpt = cateRepo.findByCateId(id);
+    public String addNewDetail(Model model, @PathVariable("id") String id, @RequestParam("title")String title, @RequestParam("content")String content, @RequestParam(value = "status", required = false)String status){
+        System.out.println(status);
+        Optional<category> cateOpt = cateRepo.findByCateId(Long.parseLong(id));
         if(cateOpt.isPresent()){
             newDetail detail = new newDetail();
             detail.setTitle(title);
@@ -131,7 +132,7 @@ public class AdminController {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             String strDate = formatter.format(date);
             detail.setCreateAt(strDate);
-            detail.setCateId(id);
+            detail.setCateId(Long.parseLong(id));
             if(status != null && status.equals("true")){
                 detail.setStatus(true);
             }
@@ -147,8 +148,10 @@ public class AdminController {
     public String showEditDetail(Model model, @PathVariable("id")Long id){
         Optional<newDetail> newDetailOpt = newDetailRepo.findByNewDetailId(id);
         String cateName = cateRepo.findByCateId(id).get().getCateName();
+        model.addAttribute("cateId", id);
         if(newDetailOpt.isPresent()){
             newDetail updateDetail = newDetailOpt.get();
+
             model.addAttribute("updateDetail",updateDetail);
             model.addAttribute("cateName",cateName);
             return "show_edit_detail";
