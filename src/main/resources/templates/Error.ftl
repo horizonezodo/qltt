@@ -19,43 +19,43 @@
 <div class="page-container">
 
     <!-- START PAGE SIDEBAR -->
-    <div class="page-sidebar">
-        <!-- START X-NAVIGATION -->
-        <ul class="x-navigation">
-            <li class="xn-logo">
-                <a href="/cate-list">Joli Admin</a>
-                <a href="#" class="x-navigation-control"></a>
-            </li>
-            <li class="xn-profile">
-                <a href="#" class="profile-mini">
-                    <img src="/assets/images/users/avatar.jpg" alt="John Doe"/>
-                </a>
-                <div class="profile">
-                    <div class="profile-image">
-                        <img src="/assets/images/users/avatar.jpg" alt="John Doe"/>
-                    </div>
-                    <div class="profile-data">
-                        <div class="profile-data-name">John Doe</div>
-                        <div class="profile-data-title">Web Developer/Designer</div>
-                    </div>
-                    <div class="profile-controls">
-                        <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
-                        <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
-                    </div>
-                </div>
-            </li>
-            <li class="xn-title">Navigation</li>
-            <li>
-                <a href="/cate-list"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
-            </li>
+<#--    <div class="page-sidebar">-->
+<#--        <!-- START X-NAVIGATION &ndash;&gt;-->
+<#--        <ul class="x-navigation">-->
+<#--            <li class="xn-logo">-->
+<#--                <a href="/cate-list">Joli Admin</a>-->
+<#--                <a href="#" class="x-navigation-control"></a>-->
+<#--            </li>-->
+<#--            <li class="xn-profile">-->
+<#--                <a href="#" class="profile-mini">-->
+<#--                    <img src="/assets/images/users/avatar.jpg" alt="John Doe"/>-->
+<#--                </a>-->
+<#--                <div class="profile">-->
+<#--                    <div class="profile-image">-->
+<#--                        <img src="/assets/images/users/avatar.jpg" alt="John Doe"/>-->
+<#--                    </div>-->
+<#--                    <div class="profile-data">-->
+<#--                        <div class="profile-data-name">John Doe</div>-->
+<#--                        <div class="profile-data-title">Web Developer/Designer</div>-->
+<#--                    </div>-->
+<#--                    <div class="profile-controls">-->
+<#--                        <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>-->
+<#--                        <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>-->
+<#--                    </div>-->
+<#--                </div>-->
+<#--            </li>-->
+<#--            <li class="xn-title">Navigation</li>-->
+<#--            <li>-->
+<#--                <a href="/cate-list"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>-->
+<#--            </li>-->
 
-        </ul>
-        <!-- END X-NAVIGATION -->
-    </div>
+<#--        </ul>-->
+<#--        <!-- END X-NAVIGATION &ndash;&gt;-->
+<#--    </div>-->
     <!-- END PAGE SIDEBAR -->
 
     <!-- PAGE CONTENT -->
-    <div class="page-content">
+<#--    <div class="page-content" style="min-width: 100%">-->
 
         <!-- START X-NAVIGATION VERTICAL -->
         <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
@@ -144,11 +144,7 @@
                         <div class="error-text">page not found</div>
                         <div class="error-subtext">Unfortunately we're having trouble loading the page you are looking for. Please wait a moment and try again or use action below.</div>
                         <div class="error-actions">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <button class="btn btn-info btn-block btn-lg"><a href="/cate-list"> Back to dashboard</a></button>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="error-subtext">Or you can use search to find anything you need.</div>
                         <div class="row">
@@ -171,7 +167,7 @@
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTENT -->
-</div>
+<#--</div>-->
 <!-- END PAGE CONTAINER -->
 
 

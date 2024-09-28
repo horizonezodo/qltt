@@ -20,7 +20,7 @@ public class WebController {
         if(username.equals("admin")){
             return "redirect:/cate-list";
         }else{
-            return "redirect:/user/cate-list";
+            return "redirect:/user/home";
         }
     }
 

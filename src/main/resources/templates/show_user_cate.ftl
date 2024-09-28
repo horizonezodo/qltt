@@ -1,134 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- META SECTION -->
-    <title>Joli Admin - Responsive Bootstrap Admin Template</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <title>JobEntry - Job Portal Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <!-- END META SECTION -->
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
 
-    <!-- CSS INCLUDE -->
-    <link rel="stylesheet" type="text/css" id="theme" href="/css/theme-default.css"/>
-    <!-- EOF CSS INCLUDE -->
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
 </head>
-<body>
-<!-- START PAGE CONTAINER -->
-<div class="page-container">
 
-    <!-- START PAGE SIDEBAR -->
-    <div class="page-sidebar">
-        <!-- START X-NAVIGATION -->
-        <ul class="x-navigation">
-            <li class="xn-logo">
-                <a href="/user/cate-list">Joli Admin</a>
-                <a href="#" class="x-navigation-control"></a>
-            </li>
-            <li class="xn-profile">
-                <a href="#" class="profile-mini">
-                    <img src="/assets/images/users/avatar.jpg" alt="John Doe"/>
-                </a>
-                <div class="profile">
-                    <div class="profile-image">
-                        <img src="/assets/images/users/avatar.jpg" alt="John Doe"/>
-                    </div>
-                    <div class="profile-data">
-                        <div class="profile-data-name">John Doe</div>
-                        <div class="profile-data-title">Web Developer/Designer</div>
-                    </div>
-                    <div class="profile-controls">
-                        <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
-                        <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+<body>
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="/user/home" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <h1 class="m-0 text-primary">JobEntry</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/user/home" class="nav-item nav-link active">Home</a>
+                <a href="/user/cate-list" class="nav-item nav-link">Category</a>
+                <a href="/user/contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!---- Table Start -->
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Category Id</th>
+            <th>Category Name</th>
+            <th>Category Status</th>
+            <th> Action </th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list cateList as cate>
+            <tr>
+                <td>${cate.cateId}</td>
+                <td>${cate.cateName}</td>
+                <td>${cate.cateActivate?string('Yes', 'No')}</td>
+                <td>
+                    <button class="btn btn-default btn-rounded btn-sm"><a href="/user/viewDetail/${cate.cateId}">View Detail</a> </button>
+                </td>
+            </tr>
+        </#list>
+        </tbody>
+    </table>
+    <!----Table End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Company</h5>
+                    <a class="btn btn-link text-white-50" href="">About Us</a>
+                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link text-white-50" href="">About Us</a>
+                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Contact</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-            </li>
-            <li class="xn-title">Navigation</li>
-            <li class="active">
-                <a href="/user/cate-list"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
-            </li>
-            <#--            <li class="xn-openable">-->
-            <#--                <a href="/cate-list"><span class="fa fa-image"></span> Category</a>-->
-        </ul>
-        <!-- END X-NAVIGATION -->
-    </div>
-    <!-- END PAGE SIDEBAR -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
-    <!-- PAGE CONTENT -->
-    <div class="page-content">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>Category Id</th>
-                <th>Category Name</th>
-                <th>Category Status</th>
-                <th> Action </th>
-            </tr>
-            </thead>
-            <tbody>
-            <#list cateList as cate>
-                <tr>
-                    <td>${cate.cateId}</td>
-                    <td>${cate.cateName}</td>
-                    <td>${cate.cateActivate?string('Yes', 'No')}</td>
-                    <td>
-                        <button class="btn btn-default btn-rounded btn-sm"><a href="/user/viewDetail/${cate.cateId}">View Detail</a> </button>
-                    </td>
-                </tr>
-            </#list>
-            </tbody>
-        </table>
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- END PAGE CONTENT -->
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
-<!-- END PAGE CONTAINER -->
 
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/lib/wow/wow.min.js"></script>
+<script src="/lib/easing/easing.min.js"></script>
+<script src="/lib/waypoints/waypoints.min.js"></script>
+<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
 
-<!-- START PRELOADS -->
-<audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
-<audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-<!-- END PRELOADS -->
-
-<!-- START SCRIPTS -->
-<!-- START PLUGINS -->
-<script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/s/plugins/bootstrap/bootstrap.min.js"></script>
-<!-- END PLUGINS -->
-
-<!-- START THIS PAGE PLUGINS-->
-<script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
-<script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-<script type="text/javascript" src="/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-
-<script type="text/javascript" src="/js/plugins/morris/raphael-min.js"></script>
-<script type="text/javascript" src="/js/plugins/morris/morris.min.js"></script>
-<script type="text/javascript" src="/js/plugins/rickshaw/d3.v3.js"></script>
-<script type="text/javascript" src="/js/plugins/rickshaw/rickshaw.min.js"></script>
-<script type='text/javascript' src='/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
-<script type='text/javascript' src='/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
-<script type='text/javascript' src='/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-<script type="text/javascript" src="/js/plugins/owl/owl.carousel.min.js"></script>
-
-<script type="text/javascript" src="/js/plugins/moment.min.js"></script>
-<script type="text/javascript" src="/js/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- END THIS PAGE PLUGINS-->
-
-<!-- START TEMPLATE -->
-<script type="text/javascript" src="/js/settings.js"></script>
-
-<script type="text/javascript" src="/js/plugins.js"></script>
-<script type="text/javascript" src="/js/actions.js"></script>
-
-<script type="text/javascript" src="/js/demo_dashboard.js"></script>
-<!-- END TEMPLATE -->
-<!-- END SCRIPTS -->
+<!-- Template Javascript -->
+<script src="/js/main.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
